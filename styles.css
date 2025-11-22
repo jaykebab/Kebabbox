@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    font-family: Brunson, sans-serif;
+    scroll-behavior: smooth;
+    color: #ffffff; 
+    
+    /* Background Image */
+    background-image: url(images/background\ of\ body.png); /* Replace with your path */
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    
+    /* Optional: Dark overlay for better text contrast */
+    background-color: rgba(0, 0, 0, 0.4); 
+    background-blend-mode: overlay; 
+}
+body:before {
+    content: url(images/background\ of\ body.png); 
+    display: none;
+}
+@font-face {
+  font-family: 'MyWebFont'; 
+  src: url(fonts/Brunson.ttf) format('truetype'); 
+  font-display: block;  
+  font-style: normal;
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #292121;
+  padding: 5px;
+  text-align: center;
+  flex-grow: 0;
+  z-index: 100;
+  transform: translateZ(0);
+}
+.logo {
+  flex-basis: 30%;
+  /* Optional: Center the logo horizontally within this 30% space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menubar {
+  flex-basis: 70%;
+  display: flex;
+  /* Align the navigation (the only child) to the far right */
+  justify-content: center; 
+  align-items: center; 
+  /* Add padding to prevent the nav from touching the edge */
+  padding-right: 20px; 
+}
+.nav-logo {
+  width: 150px; 
+  height: auto;
+  display: block;
+  margin-right: 30px; 
+}
+nav {
+  display: flex;
+  justify-content: center; /* Aligns links horizontally in the center */
+  gap: 30px;                
+  font-weight: 300;
+  background-color: #292121;
+; /* Optional background */
+  letter-spacing: 0.7px; 
+  flex-grow: 0;
+}
+nav a {
+  text-decoration: none;
+  font-family: 'MyWebFont', sans-serif; 
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 2px 2px;
+  transition: background-color 0.3s ease
+}
+.glass-wrapper {
+  /* APPLY THE GLASSY EFFECT HERE ON A SINGLE ELEMENT */
+  /*margin-top: 80px;*/
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px); 
+  /* Ensure it spans the entire width */
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+section {
+    /* Existing dimensions */
+  padding: 130px 20px;
+}
+#home {
+  padding:40px 0 0 0;
+  max-height: 110vh;
+  overflow: hidden;
+}
+.slidecontent {
+  position: absolute;
+  top: 50%;     /* Start point: 50% from the top of the parent (.slideshow) */
+  left: 50%;    /* Start point: 50% from the left of the parent (.slideshow) */
+  transform: translate(-50%, -50%); /* Corrects the position */
+  z-index: 20;  /* Stacking order (see Stacking below) */
+  text-align: center;
+  width: 80%;
+  min-width: 1000px;
+}
+.slidecontent h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  font-family: 'MyWebFont', sans-serif;
+  letter-spacing: 3px;
+  /* Improves readability against the background */
+  text-shadow: 2px 2px 4px #ffffff(0, 0, 0, 0.6);
+  z-index: 20;
+}
+.slidecontent h1 .highlight{
+  color:#f0363c;
+}
+/* Container inside #home */
+.orderlinks {
+  position: absolute;          /* place container freely inside #home */
+  bottom: 120px;                /* near bottom of slideshow */
+  left: 30%;                   /* center horizontally */
+  transform: translateX(-50%); /* true centering */
+  display: flex;
+  gap: 40px;
+  z-index: 30;
+}
+.zomato {
+  position: relative;          /* place container freely inside #home */
+  bottom: 120px;                /* near bottom of slideshow */
+  left: 150px;                   /* center horizontally */
+  display: flex;
+  z-index: 30;
+  width: 100px;
+  height: auto;
+}
+.swiggy {
+  position: relative;          /* place container freely inside #home */
+  bottom: 120px;                /* near bottom of slideshow */
+  left: 400px;                   /* center horizontally */
+  display: flex;
+  z-index: 30;
+  width: 100px;
+  height: auto;
+}
+.swiggy:hover {
+  transform: scale(1.1);
+}
+.zomato:hover {
+  transform: scale(1.1);
+}
+.slideshow{
+  position: relative;
+}
+/* Image styling: ensures it fills the container without distortion */
+.myslides img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; /* Crops the image to cover the space */
+  object-position: center center;
+  display: block;
+}
+.myslides::after {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute; /* Covers the parent .myslides */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 116vh;
+  /* The color and transparency: Black (0, 0, 0) with 30% opacity (0.3) */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 10; /* Ensures it sits on top of the image */
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.2s; /* The speed of the transition between slides */
+}
+@keyframes fade {
+  from {opacity: 0.5}
+  to {opacity: 1}
+}
