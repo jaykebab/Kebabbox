@@ -37,20 +37,20 @@ header {
   transform: translateZ(0);
 } 
 .logo {
-  flex-basis: 30%;
+  flex-basis: 10%;
   /* Optional: Center the logo horizontally within this 30% space */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .menubar {
-  flex-basis: 70%;
+  flex-basis: 30%;
   display: flex;
   /* Align the navigation (the only child) to the far right */
   justify-content: center; 
   align-items: center; 
   /* Add padding to prevent the nav from touching the edge */
-  gap: 30px
+  gap: 5px
 }
 @media (max-width: 768px) {
   header {
@@ -64,10 +64,11 @@ header {
   }
   .menubar {
   flex-direction: column;
-  gap:  0px;
+  gap: 5px;
   }
   .menubar a {
   font-size: 0.6rem;
+  letter-spacing: 0.04px;
   }
 }
 .nav-logo {
@@ -117,10 +118,10 @@ section {
 }
 .slidecontent {
   position: absolute;
-  top: 50%;     
-  left: 50%;    
-  transform: translate(-50%, -50%); 
-  z-index: 20;  
+  top: 50%;     /* Start point: 50% from the top of the parent (.slideshow) */
+  left: 50%;    /* Start point: 50% from the left of the parent (.slideshow) */
+  transform: translate(-50%, -50%); /* Corrects the position */
+  z-index: 20;  /* Stacking order (see Stacking below) */
   text-align: center;
   width: 80%;
   min-width: auto;
@@ -139,18 +140,18 @@ section {
 }
 /* Container inside #home */
 .orderlinks {
-  position: absolute;          
-  bottom: 120px;               
-  left: 30%;                   
-  transform: translateX(-50%); 
+  position: absolute;          /* place container freely inside #home */
+  bottom: 120px;                /* near bottom of slideshow */
+  left: 30%;                   /* center horizontally */
+  transform: translateX(-50%); /* true centering */
   display: flex;
   gap: 40px;
   z-index: 30;
 }
 .zomato {
-  position: relative;          
-  bottom: 120px;                
-  left: 150px;                   
+  position: relative;          /* place container freely inside #home */
+  bottom: 120px;                /* near bottom of slideshow */
+  left: 150px;                   /* center horizontally */
   display: flex;
   z-index: 30;
   width: 100px;
