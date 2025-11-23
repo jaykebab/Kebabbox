@@ -45,6 +45,9 @@
             </a>
           </div>
           <div class = "myslides fade">
+            <img src="images/B Roll Pictures/Korean .png" alt="image5">
+          </div>
+          <div class = "myslides fade">
             <img src="images/B Roll Pictures/Signature.png" alt="image1">
           </div>
           <div class = "myslides fade">
@@ -55,9 +58,6 @@
           </div>
           <div class = "myslides fade">
             <img src="images/B Roll Pictures/Lemon Chilli.png" alt="image4">
-          </div>
-          <div class = "myslides fade">
-            <img src="images/B Roll Pictures/Korean .png" alt="image5">
           </div>
           <div class = "myslides fade">
             <img src="images/B Roll Pictures/Peri Peri.png" alt="image6">
@@ -81,7 +81,16 @@
 
       <section id="location">
         <h2>locations</h2>
-        <p>This is where we are.</p>
+        <div class = "loaction1">
+          <div class = "right">
+            <a href = "https://www.google.com/maps/place/Kebab+Box/@13.0386669,77.589657,17z/data=!4m6!3m5!1s0x3bae17d31901db5f:0xc3e5047fc7a00a1c!8m2!3d13.037489!4d77.5903039!16s%2Fg%2F11xp2_47t3?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D" target = "_blank">
+              <img src = "images/shop.png" alt = "shop" class = "shop">
+            </a>
+          </div>
+          <div class = "left">
+            <p>Located in the heart of Hebbal, our flagship outlet brings the bold flavors of Kebab Box to life. Whether you're craving a spicy bite or a refreshing twist, we have got something sizzling for every palate. Open daily from 4 PM to 11 PM — swing by for your evening fix or order online for doorstep indulgence.</p>
+          </div>
+        </div>
       </section>
 
       <section id="careers">
@@ -96,13 +105,11 @@
     </main>
     <script>
       let slideIndex = -1;
-      // Ensure the slideshow doesn't start until the DOM is fully loaded and ready
       window.onload = function() {
           showSlides(); 
       };
   
       function showSlides() {
-        // Set the timer for the next loop immediately, protecting it from exceptions
       setTimeout(showSlides, 7000); 
 
       try {
@@ -113,25 +120,20 @@
         console.error("Slideshow elements not found.");
         return;
       }
-      // 1. Calculate the next index using robust 0-based logic
       slideIndex = slideIndex + 1;
       if (slideIndex >= slides.length) {
           slideIndex = 0;
       }
-          // Log the index we are attempting to show
       console.log("Attempting to show slide index: " + slideIndex);
-      // 2. Hide all slides and ensure fade class is temporarily removed
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
         slides[i].classList.remove('fade');
       }
-      // 3. Display the current slide and apply the fade class
       const currentSlide = slides[slideIndex];
       currentSlide.style.display = "block";
       currentSlide.classList.add('fade');
       } 
       catch (error) {
-      // If any error occurs during rendering (e.g., trying to access a null element)
         console.error("Slideshow rendering error:", error);
         }
       }
