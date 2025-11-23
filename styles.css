@@ -1,208 +1,273 @@
-body {
-    margin: 0;
-    font-family: Brunson, sans-serif;
-    scroll-behavior: smooth;
-    color: #ffffff; 
-    
-    /* Background Image */
-    background-image: url(images/background\ of\ body.png); /* Replace with your path */
-    background-size: cover; 
-    background-position: center center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
-    
-    /* Optional: Dark overlay for better text contrast */
-    background-color: rgba(0, 0, 0, 0.4); 
-    background-blend-mode: overlay; 
-}
-body:before {
-    content: url(images/background\ of\ body.png); 
-    display: none;
-}
-@font-face {
-  font-family: 'MyWebFont'; 
-  src: url(fonts/Brunson.ttf) format('truetype'); 
-  font-display: block;  
-  font-style: normal;
-}
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #292121;
-  padding: 5px;
-  text-align: center;
-  flex-grow: 0;
-  z-index: 100;
-  transform: translateZ(0);
-} 
-.logo {
-  flex-basis: 10%;
-  /* Optional: Center the logo horizontally within this 30% space */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.menubar {
-  flex-basis: 30%;
-  display: flex;
-  /* Align the navigation (the only child) to the far right */
-  justify-content: center; 
-  align-items: center; 
-  /* Add padding to prevent the nav from touching the edge */
-  gap: 5px
-}
-@media (max-width: 768px) {
-  header {
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
+  body {
+      margin: 0;
+      font-family: Brunson, sans-serif;
+      scroll-behavior: smooth;
+      color: #ffffff; 
+      
+      /* Background Image */
+      background-image: url(images/background\ of\ body.png); /* Replace with your path */
+      background-size: cover; 
+      background-position: center center; 
+      background-repeat: no-repeat; 
+      background-attachment: fixed; 
+      
+      /* Optional: Dark overlay for better text contrast */
+      background-color: rgba(0, 0, 0, 0.4); 
+      background-blend-mode: overlay; 
   }
-  .logo img {
-  width: 120px;
-  margin-bottom: 10px;
+  body:before {
+      content: url(images/background\ of\ body.png); 
+      display: none;
+  }
+  @media (max-width: 768px) {
+    body {
+      background-attachment: scroll; 
+      font-size: 0.95rem;            
+      line-height: 1.4;              
+      padding: 0;                  
+    }
+  }
+  @font-face {
+    font-family: 'MyWebFont'; 
+    src: url(fonts/Brunson.ttf) format('truetype'); 
+    font-display: block;  
+    font-style: normal;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #292121;
+    padding: 5px;
+    text-align: center;
+    flex-grow: 0;
+    z-index: 100;
+    transform: translateZ(0);
+  } 
+  .logo {
+    flex-basis: 10%;
+    /* Optional: Center the logo horizontally within this 30% space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .menubar {
-  flex-direction: column;
-  gap: 5px;
+    flex-basis: 30%;
+    display: flex;
+    /* Align the navigation (the only child) to the far right */
+    justify-content: center; 
+    align-items: center; 
+    /* Add padding to prevent the nav from touching the edge */
+    gap: 5px
   }
-  .menubar a {
-  font-size: 0.8rem;
-  letter-spacing: 0.04px;
+  @media (max-width: 768px) {
+    header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    }
+    .logo img {
+    width: 120px;
+    margin-bottom: 10px;
+    }
+    .menubar {
+    flex-direction: column;
+    gap: 5px;
+    }
+    .menubar a {
+    font-size: 0.6rem;
+    letter-spacing: 0.04px;
+    }
+  }
+  .nav-logo {
+    width: 150px; 
+    height: auto;
+    display: block;
+    margin-right: 30px; 
+  }
+  nav {
+    display: flex;
+    justify-content: center; /* Aligns links horizontally in the center */
+    gap: 30px;                
+    font-weight: 300;
+    background-color: #292121;
+  ; /* Optional background */
+    letter-spacing: 0.7px; 
+    flex-grow: 0;
+  }
+  nav a {
+    text-decoration: none;
+    font-family: 'MyWebFont', sans-serif; 
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 2px 2px;
+    transition: background-color 0.3s ease
+  }
+  .glass-wrapper {
+    /* APPLY THE GLASSY EFFECT HERE ON A SINGLE ELEMENT */
+    /*margin-top: 80px;*/
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    /* Ensure it spans the entire width */
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 768px) {
+    .glass-wrapper {
+      background: rgba(255, 255, 255, 0.1); 
+      backdrop-filter: blur(6px);            
+      -webkit-backdrop-filter: blur(6px);                      
+    }
+  }
+  section {
+      /* Existing dimensions */
+    scroll-margin-top: 140px;
+  }
+  @media (max-width:768px){
+    .section{
+    padding: 0px 1px;}
+  }
+  #home {
+    padding:0 0 0 0;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    #home {
+      padding: 0px 0px;
+      max-height: 50vh;
+      overflow: hidden;
+      padding-bottom: 5px;
+    }
+  }
+  .slidecontent {
+    position: absolute;
+    top: 50%;     /* Start point: 50% from the top of the parent (.slideshow) */
+    left: 50%;    /* Start point: 50% from the left of the parent (.slideshow) */
+    transform: translate(-50%, -50%); /* Corrects the position */
+    z-index: 20;  /* Stacking order (see Stacking below) */
+    text-align: center;
+    width: 80%;
+    min-width: auto;
+  }
+  .slidecontent h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    font-family: 'MyWebFont', sans-serif;
+    letter-spacing: 3px;
+    /* Improves readability against the background */
+    text-shadow: 2px 2px 4px #ffffff(0, 0, 0, 0.6);
+    z-index: 20;
+  }
+  .slidecontent h1 .highlight{
+    color:#f0363c;
+  }
+  @media (max-width: 768px) {
+    .slidecontent {
+      position: relative;     /* no absolute positioning */
+      bottom: 20%;             /* place it near bottom instead of center */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      text-align: center;
+      z-index: 20;    /* keep text centered */
+    }
+    .slidecontent h1 {
+      font-size: 1.5rem;      /* smaller heading */
+      letter-spacing: 1px;    /* tighter spacing */
+      line-height: 1.3;       /* better readability */
+    }
+  }
+  /* Container inside #home */
+  .orderlinks {
+    position: absolute;       /* overlay on slideshow */
+    bottom: 20%;              /* logical vertical placement */
+    left: 50%;                /* center horizontally */
+    transform: translateX(-50%);
+    display: flex;
+    gap: 80px;                /* spacing between logos */
+    z-index: 30;
+  }
+  /*click noxes*/
+  .orderlinks picture img  {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .orderlinks picture img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  }
+@media (max-width: 768px) {
+  .orderlinks {
+    position: absolute;
+    display: flex;                  
+    align-items: center;        
+    justify-content: center;    
+    margin-top: 20px;
+    gap: 24px;
+  }
+ .orderlinks picture img {
+    width: 100px; /* slightly bigger for visibility */
+    height: auto;
   }
 }
-.nav-logo {
-  width: 150px; 
-  height: auto;
-  display: block;
-  margin-right: 30px; 
-}
-nav {
-  display: flex;
-  justify-content: center; /* Aligns links horizontally in the center */
-  gap: 30px;                
-  font-weight: 300;
-  background-color: #292121;
-; /* Optional background */
-  letter-spacing: 0.7px; 
-  flex-grow: 0;
-}
-nav a {
-  text-decoration: none;
-  font-family: 'MyWebFont', sans-serif; 
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 30px;
-  padding: 2px 2px;
-  transition: background-color 0.3s ease
-}
-.glass-wrapper {
-  /* APPLY THE GLASSY EFFECT HERE ON A SINGLE ELEMENT */
-  /*margin-top: 80px;*/
-  background: rgba(255, 255, 255, 0.15); 
-  backdrop-filter: blur(12px); 
-  -webkit-backdrop-filter: blur(12px); 
-  /* Ensure it spans the entire width */
-  width: 100%;
-  position: relative;
-  z-index: 2;
-}
-section {
-    /* Existing dimensions */
-  padding: 130px 20px;
-}
-#home {
-  padding:40px 0 0 0;
-  max-height: 110vh;
-  overflow: hidden;
-}
-.slidecontent {
-  position: absolute;
-  top: 50%;     /* Start point: 50% from the top of the parent (.slideshow) */
-  left: 50%;    /* Start point: 50% from the left of the parent (.slideshow) */
-  transform: translate(-50%, -50%); /* Corrects the position */
-  z-index: 20;  /* Stacking order (see Stacking below) */
-  text-align: center;
-  width: 80%;
-  min-width: auto;
-}
-.slidecontent h1 {
-  font-size: 4rem;
-  margin-bottom: 0.5rem;
-  font-family: 'MyWebFont', sans-serif;
-  letter-spacing: 3px;
-  /* Improves readability against the background */
-  text-shadow: 2px 2px 4px #ffffff(0, 0, 0, 0.6);
-  z-index: 20;
-}
-.slidecontent h1 .highlight{
-  color:#f0363c;
-}
-/* Container inside #home */
-.orderlinks {
-  position: absolute;          /* place container freely inside #home */
-  bottom: 120px;                /* near bottom of slideshow */
-  left: 30%;                   /* center horizontally */
-  transform: translateX(-50%); /* true centering */
-  display: flex;
-  gap: 40px;
-  z-index: 30;
-}
-.zomato {
-  position: relative;          /* place container freely inside #home */
-  bottom: 120px;                /* near bottom of slideshow */
-  left: 150px;                   /* center horizontally */
-  display: flex;
-  z-index: 30;
-  width: 100px;
-  height: auto;
-}
-.swiggy {
-  position: relative;          /* place container freely inside #home */
-  bottom: 120px;                /* near bottom of slideshow */
-  left: 400px;                   /* center horizontally */
-  display: flex;
-  z-index: 30;
-  width: 100px;
-  height: auto;
-}
-.swiggy:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5)
-}
-.zomato:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5)
-}
-.slideshow{
-  position: relative;
-}
-/* Image styling: ensures it fills the container without distortion */
-.myslides img {
-  width: 100%;
-  height: 100%; 
-  object-fit: cover; /* Crops the image to cover the space */
-  object-position: center center;
-  display: block;
-}
-.myslides::after {
-  content: ''; /* Required for pseudo-elements */
-  position: absolute; /* Covers the parent .myslides */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 116vh;
-  /* The color and transparency: Black (0, 0, 0) with 30% opacity (0.3) */
-  background-color: rgba(0, 0, 0, 0.5); 
-  z-index: 10; /* Ensures it sits on top of the image */
-}
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.2s; /* The speed of the transition between slides */
-}
-@keyframes fade {
-  from {opacity: 0.5}
-  to {opacity: 1}
-}
-
+  .slideshow{
+    position: relative;
+    height: calc(100vh - 60px); 
+    margin-top: 60px;           
+    overflow: hidden;
+  }
+  /* Image styling: ensures it fills the container without distortion */
+  .myslides img {
+    width: 100%;
+    height: 100vh; 
+    object-fit: cover; /* Crops the image to cover the space */
+    object-position: center;
+    display: block;
+  }
+  .myslides::after {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Covers the parent .myslides */
+    inset:0;
+    /* The color and transparency: Black (0, 0, 0) with 30% opacity (0.3) */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 10; /* Ensures it sits on top of the image */
+  }
+  @media (max-width: 768px) {
+    .slideshow {
+      overflow: hidden;
+      height: 50vh;      /* prevent sideways scroll */
+    }
+    .myslides{
+      position: relative;
+      display: inline-block;
+    }
+    .myslides img {
+      width: 100%;
+      height: auto;    
+      max-height: 80vh;      
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .myslides::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+  }
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.2s; /* The speed of the transition between slides */
+  }
+  @keyframes fade {
+    from {opacity: 0.5}
+    to {opacity: 1}
+  }
